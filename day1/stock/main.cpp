@@ -7,20 +7,18 @@ class Solution
     }
 
 public:
-    int givenFunction(vector<int> &nums)
+    int givenFunction(vector<int> &prices)
     {
-        int maxi = INT_MIN;
-        int sum = 0;
-        int n = nums.size();
-        for (int i = 0; i < n; i++)
+        int mini = prices[0];
+        int maxi = 0;
+        for (int i = 0; i < prices.size(); i++)
         {
-            sum += nums[i];
-            if (sum > maxi)
-                maxi = sum;
-            if (sum < 0)
-                sum = 0;
+            mini = min(prices[i], mini);
+            if (prices[i] > mini)
+            {
+                maxi = max(prices[i] - mini, maxi);
+            }
         }
-        // if(maxi<0) return 0;
         return maxi;
     }
 };
@@ -38,13 +36,10 @@ int main()
         Solution ob;
         int n;
         cin >> n;
-        vector<int> nums(n);
+        vector<int> prices(n);
         for (int i = 0; i < n; i++)
-        {
-            cin >> nums[i];
-        }
-
-        int ans = ob.givenFunction(nums);
+            cin >> prices[i];
+        int ans = ob.givenFunction(prices);
         cout << ans << endl;
     }
     return 0;

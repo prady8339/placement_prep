@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "unordered_set": "cpp",
+        "vector": "cpp",
+        "ios": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "stack": "cpp",
+        "random": "cpp"
+    }
+}

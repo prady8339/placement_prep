@@ -1,0 +1,19 @@
+Before Sorting: 4 3 1 2 5 
+After Sorting using selection sort: 1 2 3 4 5 
+After shuffling: 4 1 5 2 3 
+
+Before Sorting: 4 1 5 2 3 
+After Sorting using bubble sort: 1 2 3 4 5 
+After shuffling: 2 3 4 5 1 
+
+Before Sorting: 2 3 4 5 1 
+After Sorting using merge sort: 1 2 3 4 5 
+After shuffling: 3 5 1 2 4 
+
+Before Sorting: 3 5 1 2 4 
+After Sorting using selection sort: 1 2 3 4 5 
+After shuffling: 4 2 1 5 3 
+
+Before Sorting: 4 2 1 5 3 
+After Sorting using quick sort: 1 2 3 4 5 
+After shuffling: 5 1 4 2 3 
