@@ -1,0 +1,9 @@
+subString {part should be contigous }
+subsequence {order matter and then all pick nonpick}
+subset/powerset {order doent matter just pick nonpick}
+
+subString < subsequence < subset ;
+
+uniqueSubseq { use unordered_set } 
+sorted subsequence  { vector.sort }
+unique+sorted { use set to store }
