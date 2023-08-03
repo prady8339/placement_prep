@@ -7,30 +7,60 @@ class Solution
 {
 
 public:
+    // vector<int> maxSlidingWindow(vector<int> &nums, int k)
+    // {
+    //     vector<int> ans;
+    //     priority_queue<pair<int, int>> pq;
+    //     int i = 0, j = 0;
+    //     while (j < nums.size())
+    //     {
+    //         if (j < k)
+    //         {
+    //             pq.push({nums[j], j});
+    //             j++;
+    //         }
+    //         else
+    //         {
+    //             ans.push_back(pq.top().first);
+    //             pq.push({nums[j], j});
+    //             j++;
+    //             i++;
+    //             while (pq.top().second < i)
+    //                 pq.pop();
+    //         }
+    //     }
+    //     if (!pq.empty())
+    //         ans.push_back(pq.top().first);
+    //     return ans;
+    // }
+
     vector<int> maxSlidingWindow(vector<int> &nums, int k)
     {
         vector<int> ans;
-        priority_queue<pair<int, int>> pq;
+        deque<int> dq;
         int i = 0, j = 0;
         while (j < nums.size())
         {
-            if (j < k)
+            while (!dq.empty() && dq.back() < nums[j])
             {
-                pq.push({nums[j], j});
+                dq.pop_back();
+            }
+            dq.push_back(nums[j]);
+
+            if (j - i + 1 < k)
+            {
                 j++;
             }
-            else
+            else if (j - i + 1 == k)
             {
-                ans.push_back(pq.top().first);
-                pq.push({nums[j], j});
+                ans.push_back(dq.front());
+                if (dq.front() == nums[i])
+                    dq.pop_front();
                 j++;
                 i++;
-                while (pq.top().second < i)
-                    pq.pop();
             }
         }
-        if (!pq.empty())
-            ans.push_back(pq.top().first);
+
         return ans;
     }
 };
